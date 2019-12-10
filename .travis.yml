@@ -1,0 +1,34 @@
+os: linux
+dist: trusty
+
+language: shell
+
+branches:
+  only:
+    - master
+    - develop
+
+before_script:
+  - env | sort
+  - export TAG=travis
+  - export VCS_REF=`git rev-parse --short HEAD`
+  - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+  - export IMAGE_NAME=__app_slug__
+
+script:
+  # Build project
+  - echo "[TODO] Test that your project builds properly"
+  # Execute project Unit Tests
+  - echo "[TODO] Test that your project Unit Tests execute properly"
+  # Run project
+  - echo "[TODO] Test that your project runs properly"
+
+notifications:
+  email: false
+
+matrix:
+  allow_failures:
+    - env: VERSION=0.1
+  
+env: # Environments
+    - VERSION=1.0

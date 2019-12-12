@@ -34,7 +34,7 @@ After replacing all variables:
 -->
 [![GitHub stars](https://img.shields.io/github/stars/Monogramm/__app_slug__?style=social)](https://github.com/Monogramm/__app_slug__)
 
-# __app_name__
+# **__app_name__**
 
 > :alembic: __app_description__
 

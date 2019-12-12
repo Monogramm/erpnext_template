@@ -15,6 +15,7 @@ After replacing all variables:
 [uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
 
 [![License: AGPL v3][uri_license_image]][uri_license]
+[![Docs](https://img.shields.io/badge/Docs-Github%20Pages-blue)](https://monogramm.github.io/__app_slug__/)
 [![gitmoji-changelog](https://img.shields.io/badge/Changelog-gitmoji-blue.svg)](https://github.com/frinyvonnick/gitmoji-changelog)
 [![Managed with Taiga.io](https://img.shields.io/badge/Managed%20with-TAIGA.io-709f14.svg)](https://tree.taiga.io/project/monogrammbot-monogramm__app_slug__/ "Managed with Taiga.io")
 [![Build Status](https://travis-ci.org/Monogramm/__app_slug__.svg)](https://travis-ci.org/Monogramm/__app_slug__)
@@ -38,6 +39,10 @@ After replacing all variables:
 > :alembic: __app_description__
 
 :construction: **This project is still in development!**
+
+## :memo: Docs
+
+See GitHub Pages at [monogramm.github.io/__app_slug__](https://monogramm.github.io/__app_slug__/).
 
 ## :chart_with_upwards_trend: Changes
 

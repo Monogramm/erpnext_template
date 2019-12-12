@@ -40,7 +40,7 @@ After replacing all variables:
 
 :construction: **This project is still in development!**
 
-## :memo: Docs
+## :blue_book: Docs
 
 See GitHub Pages at [monogramm.github.io/__app_slug__](https://monogramm.github.io/__app_slug__/).
 

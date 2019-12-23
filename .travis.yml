@@ -29,6 +29,6 @@ notifications:
 matrix:
   allow_failures:
     - env: VERSION=0.1
-  
+
 env: # Environments
     - VERSION=1.0

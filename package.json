@@ -1,19 +1,18 @@
 {
-  "name": "readme-md-generator",
-  "version": "0.1.3",
-  "description": "CLI that generates beautiful README.md files.",
-  "author": "Franck Abgrall",
+  "name": "erpnext_[your_project_name]",
+  "description": "[your_description]",
+  "author": "Monogramm",
   "license": "MIT",
-  "homepage": "https://github.com/kefranabg/readme-md-generator#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kefranabg/readme-md-generator.git"
+  "dependencies": {
+    "cypress": "^3.1.4",
+    "remark-cli": "^7.0.1",
+    "remark-lint": "^6.0.5",
+    "remark-preset-lint-recommended": "^3.0.3"
   },
-  "bugs": {
-    "url": "https://github.com/kefranabg/readme-md-generator/issues"
+  "scripts": {
+    "lint-md": "remark ."
   },
-  "engines": {
-    "npm": ">=5.5.0",
-    "node": ">=9.3.0"
+  "remarkConfig": {
+    "plugins": ["remark-preset-lint-recommended"]
   }
 }

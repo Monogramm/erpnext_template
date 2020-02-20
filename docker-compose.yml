@@ -27,7 +27,7 @@ services:
       # Docker setup
       - DOCKER_APPS_TIMEOUT=900
       - DOCKER_DEBUG=1
-    volumes_from: 
+    volumes_from:
       - erpnext_app
     volumes:
       - /etc/localtime:/etc/localtime:ro

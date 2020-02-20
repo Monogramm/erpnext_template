@@ -39,6 +39,7 @@ RUN set -ex; \
 # Build environment variables
 ARG FRAPPE_APP_TO_TEST=${FRAPPE_APP_TO_TEST}
 
+
 # Copy the whole repository to app folder for manual install
 COPY --chown=frappe:frappe . "/home/$FRAPPE_USER"/frappe-bench/apps/${FRAPPE_APP_TO_TEST}
 

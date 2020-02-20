@@ -13,7 +13,7 @@ before_script:
   - export TAG=travis
   - export VCS_REF=`git rev-parse --short HEAD`
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
-  - export IMAGE_NAME=__app_slug__
+  - export IMAGE_NAME=erpnext_template
 
 script:
   # Build project

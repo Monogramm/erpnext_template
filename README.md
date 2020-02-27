@@ -63,7 +63,7 @@ bench bench run-tests --profile --app [app_name]
 
 ## :handshake: Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/[project_name]/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Monogramm/erpnext_template/issues).
 [Check the contributing guide](./CONTRIBUTING.md).<br />
 
 ## :thumbsup: Show your support

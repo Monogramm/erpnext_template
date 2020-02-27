@@ -16,7 +16,7 @@
 
 ## :blue_book: Docs
 
-See GitHub Pages at [monogramm.github.io/__app_slug__](https://monogramm.github.io/erpnext_template/).
+See GitHub Pages at [monogramm.github.io/erpnext_template](https://monogramm.github.io/erpnext_template/).
 
 ## :chart_with_upwards_trend: Changes
 
@@ -25,8 +25,8 @@ See [CHANGELOG](./CHANGELOG.md)
 ## :bookmark: Roadmap
 
 See [set here the link of your task manager (trello, taiga, e.t.c)]
-## :construction: Install
 
+## :construction: Install
 
 
 **Install Frappe application**
@@ -37,6 +37,7 @@ When installing Frappe app, the following python requirements will be installed:
 
 
 ## :rocket: Usage
+
 How to use this application
 
 

@@ -1,6 +1,6 @@
 {
-  "name": "erpnext_[your_project_name]",
-  "description": "[your_description]",
+  "name": "erpnext_template",
+  "description": "[app_description]",
   "author": "Monogramm",
   "license": "MIT",
   "dependencies": {

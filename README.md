@@ -3,8 +3,11 @@
 [uri_license_image]: https://img.shields.io/badge/license-MIT-blue
 
 [![License: AGPL v3][uri_license_image]][uri_license]
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/347f10fa884446c492b6ba8cd7f4d7fc)](https://app.codacy.com/gh/Monogramm/erpnext_template?utm_source=github.com&utm_medium=referral&utm_content=Monogramm/erpnext_template&utm_campaign=Badge_Grade_Dashboard)
+[![Docs](https://img.shields.io/badge/Docs-Github%20Pages-blue)](https://monogramm.github.io/erpnext_template/)
+[![gitmoji-changelog](https://img.shields.io/badge/Changelog-gitmoji-blue.svg)](https://github.com/frinyvonnick/gitmoji-changelog)
 [![Managed with Taiga.io](https://img.shields.io/badge/managed%20with-TAIGA.io-709f14.svg)](https://tree.taiga.io/project/monogrammbot-[your_project]/ "Managed with Taiga.io")
-[![Build Status](https://travis-ci.org/Monogramm/[your_app_name].svg)](https://travis-ci.org/Monogramm/erpnext_template)
+[![Build Status](https://travis-ci.org/Monogramm/erpnext_template.svg)](https://travis-ci.org/Monogramm/erpnext_template)
 [![Coverage Status](https://coveralls.io/repos/github/Monogramm/erpnext_template/badge.svg?branch=master)](https://coveralls.io/github/Monogramm/erpnext_template?branch=master)
 
 ## ERPNext [name]
@@ -13,7 +16,7 @@
 
 ## :blue_book: Docs
 
-See GitHub Pages at [monogramm.github.io/__app_slug__](https://monogramm.github.io/__app_slug__/).
+See GitHub Pages at [monogramm.github.io/__app_slug__](https://monogramm.github.io/erpnext_template/).
 
 ## :chart_with_upwards_trend: Changes
 

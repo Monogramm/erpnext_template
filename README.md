@@ -1,6 +1,6 @@
-[uri_license]: https://opensource.org/licenses/MIT
+[uri_license]: https://opensource.org/licenses/GPL-3.0
 
-[uri_license_image]: https://img.shields.io/badge/license-MIT-blue
+[uri_license_image]: https://img.shields.io/badge/license-AGPL%20v3-blue
 
 [![License: AGPL v3][uri_license_image]][uri_license]
 [![Managed with Taiga.io](https://img.shields.io/badge/managed%20with-TAIGA.io-709f14.svg)](https://tree.taiga.io/project/monogrammbot-[your_project]/ "Managed with Taiga.io")
@@ -54,9 +54,6 @@ bench bench run-tests --profile --app [app_name]
 -   Website: <https://www.monogramm.io>
 -   Github: [@Monogramm](https://github.com/Monogramm)
 
-**John Vincent Fiel**
-
--   Github: [@jvfiel](https://github.com/jvfiel)
 
 ## :handshake: Contributing
 
@@ -69,8 +66,8 @@ Give a :star: if this project helped you!
 
 ## :page_facing_up: License
 
-Copyright © 2019 [Monogramm](https://github.com/Monogramm).<br />
-This project is [MIT](uri_license) licensed.
+Copyright © 2020 [Monogramm](https://github.com/Monogramm).<br />
+This project is [AGPL v3](uri_license) licensed.
 
 * * *
 

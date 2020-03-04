@@ -25,10 +25,6 @@ RUN set -ex; \
         pkg-config \
     ; \
     sudo rm -rf /var/lib/apt/lists/*; \
-    sudo sed -i \
-        -e 's/rights="none" pattern="PDF"/rights="read" pattern="PDF"/g' \
-        /etc/ImageMagick*/policy.xml \
-    ; \
     sudo mkdir -p "/home/$FRAPPE_USER"/frappe-bench/logs; \
     sudo touch "/home/$FRAPPE_USER"/frappe-bench/logs/bench.log; \
     sudo chmod 777 \

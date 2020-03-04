@@ -3,12 +3,12 @@ from __future__ import unicode_literals
 from . import __version__ as app_version
 
 app_name = "erpnext_template"
-app_title = "Erpnext Template"
-app_publisher = "Publisher"
+app_title = "ERPNext Template"
+app_publisher = "Monogramm"
 app_description = "Description"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
-app_email = "template@email.com"
+app_email = "opensource@monogramm.io"
 app_license = "AGPL v3"
 
 # Includes in <head>

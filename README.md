@@ -32,6 +32,17 @@ See [set here the link of your task manager (trello, taiga, e.t.c)]
 **Install Frappe application**
 
 
+```sh
+echo "[TODO] Describe how to use application"
+```
+
+## :white_check_mark: Run tests
+
+```sh
+echo "[TODO] Describe how to execute Unit Tests"
+```
+
+
 
 When installing Frappe app, the following python requirements will be installed:
 

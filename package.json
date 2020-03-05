@@ -1,8 +1,8 @@
 {
   "name": "erpnext_template",
-  "description": "[app_description]",
+  "description": "__app_description__",
   "author": "Monogramm",
-  "license": "MIT",
+  "license": "AGPL",
   "dependencies": {
     "cypress": "^3.1.4",
     "remark-cli": "^7.0.1",

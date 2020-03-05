@@ -1,4 +1,4 @@
-[uri_license]: https://opensource.org/licenses/GPL-3.0
+[uri_license]: https://opensource.org/licenses/AGPL-3.0
 
 [uri_license_image]: https://img.shields.io/badge/license-AGPL%20v3-blue
 
@@ -24,7 +24,7 @@ See [CHANGELOG](./CHANGELOG.md)
 
 ## :bookmark: Roadmap
 
-See [set here the link of your task manager (trello, taiga, e.t.c)]
+See [set here the link of your task manager]
 
 ## :construction: Install
 
@@ -33,18 +33,24 @@ See [set here the link of your task manager (trello, taiga, e.t.c)]
 
 
 ```sh
-echo "[TODO] Describe how to use application"
+bench install-app [app_name]
 ```
+Full documentation: https://github.com/frappe/frappe/wiki/The-Hitchhiker%27s-Guide-to-Installing-Frappe-on-Linux
 
 ## :white_check_mark: Run tests
-
+To execute tests for all frappe application:
 ```sh
-echo "[TODO] Describe how to execute Unit Tests"
+bench run-tests
 ```
-
-
+If you want execute tests from your application you can write:
+```sh
+bench run-tests --app [app_name]
+```
+Full documentation: 
+https://frappe.io/docs/user/en/guides/automated-testing/unit-testing
 
 When installing Frappe app, the following python requirements will be installed:
+
 
 
 ## :rocket: Usage
@@ -54,13 +60,6 @@ How to use this application
 
 
 ### Known issues
-
-
-## :white_check_mark: Run tests
-
-```sh
-bench bench run-tests --profile --app [app_name]
-```
 
 ## :bust_in_silhouette: Authors
 

@@ -9,6 +9,6 @@ def get_data():
 			"color": "grey",
 			"icon": "octicon octicon-file-directory",
 			"type": "module",
-			"label": _("Erpnext Template")
+			"label": _("ERPnext Template")
 		}
 	]

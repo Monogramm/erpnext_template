@@ -1,1 +1,11 @@
 .idea/
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+node_modules
+erpnext_ocr/docs/current
+*.iml
+*.xml
+*.prof

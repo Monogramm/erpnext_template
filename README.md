@@ -19,9 +19,9 @@
 See GitHub Pages at [monogramm.github.io/erpnext_template](https://monogramm.github.io/erpnext_template/).
 
 ## :chart_with_upwards_trend: Changes
-
-See [CHANGELOG](./CHANGELOG.md)
-
+All notable changes to this project will be documented in [CHANGELOG](./CHANGELOG.md) file.
+This CHANGELOG is generated with :heart: by [gitmoji-changelog](https://github.com/frinyvonnick/gitmoji-changelog)
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## :bookmark: Roadmap
 
 See [set here the link of your task manager]
@@ -58,6 +58,12 @@ When installing Frappe app, the following python requirements will be installed:
 How to use this application
 
 
+<!--
+[TODO] If project is deployed to DockerHub:
+## :whale: Supported tags
+[Dockerhub monogramm/__app_slug__](https://hub.docker.com/r/monogramm/__app_slug__/)
+* `latest`
+-->
 
 ### Known issues
 

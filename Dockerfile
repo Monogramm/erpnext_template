@@ -15,23 +15,6 @@ RUN set -ex; \
     sudo ln -fs /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chromedriver; \
     export PATH="$PATH;/usr/local/bin/chromedriver"
 
-# Install Tesseract dependencies
-RUN set -ex; \
-    sudo apt-get update -q; \
-    sudo apt-get install -y --no-install-recommends \
-        ghostscript \
-        imagemagick \
-        libmagickwand-dev \
-        pkg-config \
-    ; \
-    sudo rm -rf /var/lib/apt/lists/*; \
-    sudo mkdir -p "/home/$FRAPPE_USER"/frappe-bench/logs; \
-    sudo touch "/home/$FRAPPE_USER"/frappe-bench/logs/bench.log; \
-    sudo chmod 777 \
-        "/home/$FRAPPE_USER"/frappe-bench/logs \
-        "/home/$FRAPPE_USER"/frappe-bench/logs/* \
-    ;
-
 # Build environment variables
 ARG FRAPPE_APP_TO_TEST=${FRAPPE_APP_TO_TEST}
 

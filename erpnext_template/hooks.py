@@ -5,7 +5,7 @@ from . import __version__ as app_version
 app_name = "erpnext_template"
 app_title = "ERPNext Template"
 app_publisher = "Monogramm"
-app_description = "Description"
+app_description = "TODO_APP_DESCRIPTION"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "opensource@monogramm.io"

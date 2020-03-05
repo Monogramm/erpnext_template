@@ -8,7 +8,7 @@
 
 ## ERPNext Template
 
-> :alembic: **TODO_APP_DESCRIPTION**
+> :alembic: TODO_APP_DESCRIPTION
 
 ## :blue_book: Docs
 
@@ -49,7 +49,7 @@ When installing Frappe app, the following python requirements will be installed:
 
 How to use this application:
 
-**TODO_APP_USAGE**
+TODO_APP_USAGE
 
 <!--
 [TODO] If project is deployed to DockerHub:

@@ -72,8 +72,7 @@ else
     bench run-tests \
         --app "${FRAPPE_APP_TO_TEST}" \
         --coverage \
-        --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}"
-     FIXME https://github.com/frappe/frappe/issues/8809
+        --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}" \
         --junit-xml-output "${FRAPPE_APP_UNIT_TEST_REPORT}"
 fi
 

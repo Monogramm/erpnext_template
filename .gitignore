@@ -5,7 +5,7 @@
 *.swp
 tags
 node_modules
-erpnext_ocr/docs/current
+erpnext_template/docs/current
 *.iml
 *.xml
 *.prof

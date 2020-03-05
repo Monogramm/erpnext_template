@@ -72,8 +72,8 @@ else
     bench run-tests \
         --app "${FRAPPE_APP_TO_TEST}" \
         --coverage \
-        --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}" \
-        --junit-xml-output "${FRAPPE_APP_UNIT_TEST_REPORT}"
+        --junit-xml-output "${FRAPPE_APP_UNIT_TEST_REPORT}" \
+        --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}"
 fi
 
 ## Check result of tests

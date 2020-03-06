@@ -10,3 +10,4 @@ erpnext_template/docs/current
 *.xml
 *.prof
 __pycache__/
+erpnext_template/__pycache__/

@@ -1,5 +1,5 @@
 """
-Configuration for docs
+Configuration for docs.
 """
 
 # source_link = "https://github.com/Monogramm/erpnext_template"

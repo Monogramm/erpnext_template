@@ -6,11 +6,22 @@ from __future__ import unicode_literals
 
 import unittest
 
+from erpnext.hooks import app_title, app_publisher, app_name, app_description, app_icon, app_color, app_email, \
+    app_license
 from erpnext_template.config.desktop import get_data
 
 
 class TestDesktop(unittest.TestCase):
     def test_get_data(self):
         data = get_data()
-
         self.assertIsNotNone(data)
+
+    def test_hooks(self):
+        self.assertIsNotNone(app_name)
+        self.assertIsNotNone(app_title)
+        self.assertIsNotNone(app_publisher)
+        self.assertIsNotNone(app_description)
+        self.assertIsNotNone(app_icon)
+        self.assertIsNotNone(app_color)
+        self.assertIsNotNone(app_email)
+        self.assertIsNotNone(app_license)

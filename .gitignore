@@ -9,3 +9,4 @@ erpnext_template/docs/current
 *.iml
 *.xml
 *.prof
+__pycache__/

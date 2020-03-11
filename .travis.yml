@@ -20,7 +20,7 @@ before_script:
 script:
   - cd "$dir"
   # Prepare base image for build version and variant
-  - ls -a
+  - ls ../
   - sed -i -e "s/%%VERSION%%/${VERSION}/g" Dockerfile.${VARIANT}
   - sed -i -e "s/%%IMAGE_NAME%%/${IMAGE_NAME}/g" Dockerfile_test
   # Test container build

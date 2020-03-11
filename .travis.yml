@@ -16,11 +16,11 @@ before_script:
   - export VCS_REF=`git rev-parse --short HEAD`
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
   - export IMAGE_NAME=erpnext_template
+  - dir=".travis"
 
 script:
   - cd "$dir"
   # Prepare base image for build version and variant
-  - ls ../
   - sed -i -e "s/%%VERSION%%/${VERSION}/g" Dockerfile.${VARIANT}
   - sed -i -e "s/%%IMAGE_NAME%%/${IMAGE_NAME}/g" Dockerfile_test
   # Test container build

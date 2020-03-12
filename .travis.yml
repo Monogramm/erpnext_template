@@ -65,10 +65,6 @@ script:
 notifications:
   email: false
 
-matrix:
-  allow_failures:
-    - env: VERSION=0.1
-
 jobs:
   allow_failures:
     - env: VERSION=develop VARIANT=alpine DATABASE=mariadb

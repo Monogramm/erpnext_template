@@ -92,7 +92,9 @@ fi
 
 if [ -f ./sites/.coverage ]; then
     echo "Sending Unit Tests coverage of '${FRAPPE_APP_TO_TEST}' app to Coveralls..."
+    set +e
     coveralls -b "$(pwd)/apps/${FRAPPE_APP_TO_TEST}" -d "$(pwd)/sites/.coverage"
+    set -e
 fi
 
 if [ -f "${FRAPPE_APP_UNIT_TEST_PROFILE}" ]; then
@@ -117,6 +119,27 @@ fi
 #fi
 
 ## TODO Check result of UI tests
+
+
+
+################################################################################
+# TODO Generate docs
+
+#bench build-docs --help
+
+echo "Generating docs for '${FRAPPE_APP_TO_TEST}' app..."
+if [ "${TEST_VERSION}" = "10" ] || [ "${TEST_VERSION}" = "11" ]; then
+    set +e
+    bench build-docs \
+        --target ${FRAPPE_APP_TO_TEST} \
+        --docs-version ${FRAPPE_APP_TO_TEST} \
+        ${FRAPPE_APP_TO_TEST}
+    set -e
+else
+    echo "Building docs is not available for this version of Frappe (${TEST_VERSION})"
+fi
+
+## TODO Check docs generated properly
 
 
 ################################################################################

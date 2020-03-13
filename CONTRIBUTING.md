@@ -3,14 +3,11 @@ Contributing
 
 First of all, **thank you** for contributing, **you are awesome**!
 
-You can report bugs or request new features by creating an [issue](https://github.com/Monogramm/__app_slug__/issues), or submit a [pull request](https://github.com/Monogramm/__app_slug__/pulls) with your contribution.
+You can report bugs or request new features by creating an [issue](https://github.com/Monogramm/erpnext_template/issues), or submit a [pull request](https://github.com/Monogramm/erpnext_template/pulls) with your contribution.
 
 Here are a few rules to follow in order to ease code reviews and discussions before maintainers accept and merge your work.
 
-<!--
-    [TODO] Replace the best practices depending on the project's language and framework.
--->
-You MUST follow the [Best practices for this project language and framework](https://en.wikipedia.org/wiki/Best_coding_practices). If you don't know about any of them, you should really read the recommendations.
+You MUST follow the [Best of the Best Practices (BOBP) Guide for Python](https://gist.github.com/sloria/7001839). If you don't know about any of them, you should really read the recommendations.
 
 You MUST run the CI test suite and ensure it is successful. If you haven't enabled it on your fork, it will be automatically triggered when opening/pushing a Pull Request (PR).
 

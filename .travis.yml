@@ -1,6 +1,8 @@
 os: linux
 dist: trusty
 
+services: docker
+
 language: shell
 
 branches:
@@ -13,22 +15,86 @@ before_script:
   - export TAG=travis
   - export VCS_REF=`git rev-parse --short HEAD`
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
-  - export IMAGE_NAME=__app_slug__
+  - export IMAGE_NAME=erpnext_template
+  - dir=".travis"
+  - export BUILD_BRANCH=${TRAVIS_PULL_REQUEST_BRANCH:-${TRAVIS_BRANCH}}
+  - export BUILD_URL=https://github.com/${TRAVIS_PULL_REQUEST_SLUG:-${TRAVIS_REPO_SLUG}}
 
 script:
-  # Build project
-  - echo "[TODO] Test that your project builds properly"
-  # Execute project Unit Tests
-  - echo "[TODO] Test that your project Unit Tests execute properly"
-  # Run project
-  - echo "[TODO] Test that your project runs properly"
+  - cd "$dir"
+  # Prepare base image for build version and variant
+  - sed -i -e "s/%%VERSION%%/${VERSION}/g" Dockerfile.${VARIANT}
+  - sed -i -e "s/%%IMAGE_NAME%%/${IMAGE_NAME}/g" Dockerfile_test
+  # Test container build
+  - travis_retry travis_wait 60 docker-compose -f docker-compose.${DATABASE}.yml build
+  - docker images
+  # Test container run
+  - travis_retry docker-compose -f docker-compose.${DATABASE}.yml up -d && sleep 60
+  - docker-compose -f docker-compose.${DATABASE}.yml ps
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_db"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_db" | grep "Up" || exit 1
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_app"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_app" | grep "Up" || exit 1
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_web"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_web" | grep "Up" || exit 1
+  - echo 'Wait until sites and apps database installed (9-10 minutes)' && travis_wait 15 sleep 720
+  - docker-compose -f docker-compose.${DATABASE}.yml ps
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_db"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_db" | grep "Up"
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_app"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_app" | grep "Up"
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_web"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_web" | grep "Up"
+  - echo 'Wait until test finished (3 minutes)' && sleep 180
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "sut"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "sut" | grep "Exit 0"
+  # Test container restart
+  - docker-compose -f docker-compose.${DATABASE}.yml down
+  - travis_retry docker-compose -f docker-compose.${DATABASE}.yml up -d && sleep 60
+  - docker-compose -f docker-compose.${DATABASE}.yml ps
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_db"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_db" | grep "Up"
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_app"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_app" | grep "Up"
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_web"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_web" | grep "Up"
+  - echo 'Wait until test finished (6 minutes)' && sleep 360
+  - docker-compose -f docker-compose.${DATABASE}.yml logs "sut"
+  - docker-compose -f docker-compose.${DATABASE}.yml ps "sut" | grep "Exit 0"
 
 notifications:
   email: false
 
-matrix:
+jobs:
   allow_failures:
-    - env: VERSION=0.1
-  
+    - env: VERSION=develop VARIANT=alpine DATABASE=mariadb
+    - env: VERSION=develop VARIANT=alpine DATABASE=postgres
+    - env: VERSION=develop VARIANT=debian DATABASE=mariadb
+    - env: VERSION=develop VARIANT=debian DATABASE=postgres
+    - env: VERSION=develop VARIANT=debian-slim DATABASE=mariadb
+    - env: VERSION=develop VARIANT=debian-slim DATABASE=postgres
+    - env: VERSION=12 VARIANT=alpine DATABASE=postgres
+    - env: VERSION=12 VARIANT=debian DATABASE=postgres
+    - env: VERSION=12 VARIANT=debian-slim DATABASE=postgres
+    # FIXME For some reason, apt-get missing in base image!!
+    - env: VERSION=10 VARIANT=debian DATABASE=mariadb
+
 env: # Environments
-    - VERSION=1.0
+  - VERSION=develop VARIANT=alpine DATABASE=mariadb
+  - VERSION=develop VARIANT=alpine DATABASE=postgres
+  - VERSION=develop VARIANT=debian DATABASE=mariadb
+  - VERSION=develop VARIANT=debian DATABASE=postgres
+  - VERSION=develop VARIANT=debian-slim DATABASE=mariadb
+  - VERSION=develop VARIANT=debian-slim DATABASE=postgres
+  - VERSION=10 VARIANT=alpine DATABASE=mariadb
+  - VERSION=10 VARIANT=debian DATABASE=mariadb
+  - VERSION=10 VARIANT=debian-slim DATABASE=mariadb
+  - VERSION=11 VARIANT=alpine DATABASE=mariadb
+  - VERSION=11 VARIANT=debian DATABASE=mariadb
+  - VERSION=11 VARIANT=debian-slim DATABASE=mariadb
+  - VERSION=12 VARIANT=alpine DATABASE=mariadb
+  - VERSION=12 VARIANT=alpine DATABASE=postgres
+  - VERSION=12 VARIANT=debian DATABASE=mariadb
+  - VERSION=12 VARIANT=debian DATABASE=postgres
+  - VERSION=12 VARIANT=debian-slim DATABASE=mariadb
+  - VERSION=12 VARIANT=debian-slim DATABASE=postgres

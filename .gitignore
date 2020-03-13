@@ -1,0 +1,13 @@
+.idea/
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+node_modules
+erpnext_template/docs/current
+*.iml
+*.xml
+*.prof
+__pycache__/
+erpnext_template/__pycache__/

@@ -14,4 +14,4 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## License
 
 Copyright © 2020 [Monogramm](https://github.com/Monogramm).<br />
-This project is [AGPL v3](uri_license) licensed.
+This project is [AGPL v3](https://opensource.org/licenses/AGPL-3.0) licensed.

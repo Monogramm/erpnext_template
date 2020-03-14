@@ -17,18 +17,23 @@ before_script:
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
   - export IMAGE_NAME=erpnext_template
   - home=$(pwd)
-  - dir=".travis"
+  - dir="$(pwd)/.travis"
   - export BUILD_BRANCH=${TRAVIS_PULL_REQUEST_BRANCH:-${TRAVIS_BRANCH}}
   - export BUILD_URL=https://github.com/${TRAVIS_PULL_REQUEST_SLUG:-${TRAVIS_REPO_SLUG}}
 
-script:
+install:
   - cd "$dir"
   # Prepare base image for build version and variant
   - sed -i -e "s/%%VERSION%%/${VERSION}/g" Dockerfile.${VARIANT}
   - sed -i -e "s/%%IMAGE_NAME%%/${IMAGE_NAME}/g" Dockerfile_test
   # Test container build
   - travis_retry travis_wait 60 docker-compose -f docker-compose.${DATABASE}.yml build
+
+after_install:
   - docker images
+
+script:
+  - cd "$dir"
   # Test container run
   - travis_retry docker-compose -f docker-compose.${DATABASE}.yml up -d && sleep 60
   - docker-compose -f docker-compose.${DATABASE}.yml ps
@@ -59,15 +64,15 @@ script:
   - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_app" | grep "Up"
   - docker-compose -f docker-compose.${DATABASE}.yml logs "erpnext_web"
   - docker-compose -f docker-compose.${DATABASE}.yml ps "erpnext_web" | grep "Up"
-  - echo 'Wait until test finished (6 minutes)' && sleep 360
+  - echo 'Wait until test finished (3 minutes)' && sleep 180
   - docker-compose -f docker-compose.${DATABASE}.yml logs "sut"
   - docker-compose -f docker-compose.${DATABASE}.yml ps "sut" | grep "Exit 0"
 
 after_script:
   - cd "$home"
-#  - sudo pip install python-coveralls
-#  - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
   - test -n "$CODACY_PROJECT_TOKEN" || bash <(curl -Ls https://coverage.codacy.com/get.sh) -l Python -r /srv/erpnext/frappe/sites/.coverage
+  #  - sudo pip install python-coveralls
+  #  - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
 
 notifications:
   email: false

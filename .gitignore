@@ -1,13 +1,28 @@
+# IDE configurations
 .idea/
-.DS_Store
-*.pyc
-*.egg-info
-*.swp
-tags
-node_modules
-erpnext_template/docs/current
 *.iml
-*.xml
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Python files
+*.egg-info
+*.pyc
+*.swp
 *.prof
 __pycache__/
 erpnext_template/__pycache__/
+
+# Codacy coverage
+erpnext_template/.codacy-coverage
+erpnext_template/get.sh
+
+# Package managers
+node_modules
+
+# Other files
+tags
+erpnext_template/docs/current
+*.xml

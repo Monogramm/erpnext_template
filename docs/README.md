@@ -3,7 +3,8 @@
 This directory contains the code for the **ERPNext Template** docs site, [monogramm.github.io/erpnext_template](https://monogramm.github.io/erpnext_template).
 
 References:
-* [Publish Your Project Documentation with GitHub Pages](https://github.blog/2016-08-22-publish-your-project-documentation-with-github-pages/)
+
+-   [Publish Your Project Documentation with GitHub Pages](https://github.blog/2016-08-22-publish-your-project-documentation-with-github-pages/)
 
 ## Contributing
 

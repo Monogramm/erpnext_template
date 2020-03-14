@@ -2,6 +2,8 @@
 # Copyright (c) 2020, Monogramm and Contributors
 # See license.txt
 
+from __future__ import unicode_literals
+
 import unittest
 
 from erpnext_template.config.docs import get_context

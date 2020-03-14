@@ -22,11 +22,21 @@ class TestDocs(unittest.TestCase):
                                           'docs_base_url': None,
                                           'headline': None,
                                           'sub_heading': None})
+
         get_context(context)
 
         self.assertIsNotNone(context)
+
         self.assertIsNotNone(context.brand_html)
+
         self.assertIsNotNone(context.source_link)
+        self.assertEqual(context.source_link, source_link)
+
         self.assertIsNotNone(context.docs_base_url)
+        self.assertEqual(context.docs_base_url, docs_base_url)
+
         self.assertIsNotNone(context.headline)
+        self.assertEqual(context.headline, headline)
+
         self.assertIsNotNone(context.sub_heading)
+        self.assertEqual(context.sub_heading, sub_heading)

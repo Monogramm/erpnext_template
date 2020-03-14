@@ -81,6 +81,7 @@ after_script:
   # Publish coverage to Codacy if token defined
   - test -n "$CODACY_PROJECT_TOKEN" || bash <(curl -Ls https://coverage.codacy.com/get.sh) -l Python -r /srv/erpnext/frappe/sites/.coverage
   # Publish coverage to Coveralls
+  - ls -al /srv/erpnext/frappe/sites/
   - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
 
 notifications:

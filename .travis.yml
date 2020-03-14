@@ -10,7 +10,7 @@ branches:
     - master
     - develop
 
-before_script:
+before_install:
   - env | sort
   - export TAG=travis
   - export VCS_REF=`git rev-parse --short HEAD`

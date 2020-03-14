@@ -31,7 +31,7 @@ install:
   # Test container build
   - travis_retry travis_wait 60 docker-compose -f docker-compose.${DATABASE}.yml build
 
-after_install:
+before_script:
   - docker images
 
 script:

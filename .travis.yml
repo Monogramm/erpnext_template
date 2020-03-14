@@ -20,6 +20,9 @@ before_install:
   - export travis_dir="${home}/.travis"
   - export BUILD_BRANCH=${TRAVIS_PULL_REQUEST_BRANCH:-${TRAVIS_BRANCH}}
   - export BUILD_URL=https://github.com/${TRAVIS_PULL_REQUEST_SLUG:-${TRAVIS_REPO_SLUG}}
+  - mkdir -p '/home/frappe/frappe-bench/apps'
+  # For coverage, requires same path as docker context
+  - ln -sf "$(pwd)" '/home/frappe/frappe-bench/apps/erpnext_template'
 
 install:
   - echo "Changing to travis test directory ($travis_dir)"
@@ -76,7 +79,7 @@ after_script:
   - sudo pip install coverage==4.5.4
   - sudo pip install python-coveralls
   # Publish coverage to Codacy
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh) -l Python -r /srv/erpnext/frappe/sites/.coverage
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh)
   # Publish coverage to Coveralls
   - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
 

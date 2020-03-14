@@ -22,7 +22,6 @@ before_install:
   - export BUILD_URL=https://github.com/${TRAVIS_PULL_REQUEST_SLUG:-${TRAVIS_REPO_SLUG}}
 
 install:
-  - pwd
   - echo "Changing to travis test directory ($travis_dir)"
   - cd "$travis_dir"
   # Prepare base image for build version and variant
@@ -35,7 +34,6 @@ before_script:
   - docker images
 
 script:
-  - pwd
   - echo "Changing to travis test directory ($travis_dir)"
   - cd "$travis_dir"
   # Test container run
@@ -73,15 +71,13 @@ script:
   - docker-compose -f docker-compose.${DATABASE}.yml ps "sut" | grep "Exit 0"
 
 after_script:
-  - pwd
   - echo "Changing to project directory ($home)"
   - cd "$home"
   - sudo pip install coverage==4.5.4
   - sudo pip install python-coveralls
-  # Publish coverage to Codacy if token defined
-  - test -n "$CODACY_PROJECT_TOKEN" || bash <(curl -Ls https://coverage.codacy.com/get.sh) -l Python -r /srv/erpnext/frappe/sites/.coverage
+  # Publish coverage to Codacy
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) -l Python -r /srv/erpnext/frappe/sites/.coverage
   # Publish coverage to Coveralls
-  - ls -al /srv/erpnext/frappe/sites/
   - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
 
 notifications:

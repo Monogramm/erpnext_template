@@ -74,6 +74,10 @@ else
         --coverage \
         --junit-xml-output "${FRAPPE_APP_UNIT_TEST_REPORT}" \
         --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}"
+
+    # TODO When frappe supports coverage report in XML format
+    # https://github.com/frappe/frappe/issues/9696
+    # --coverage-report=xml
 fi
 
 ## Check result of tests
@@ -96,10 +100,12 @@ if [ -f ./sites/.coverage ]; then
     coveralls -b "$(pwd)/apps/${FRAPPE_APP_TO_TEST}" -d "$(pwd)/sites/.coverage"
     set -e
 
-    echo "Sending Unit Tests coverage of '${FRAPPE_APP_TO_TEST}' app to Codacy..."
-    set +e
-    bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python -r /srv/erpnext/frappe/sites/.coverage
-    set -e
+    # TODO When frappe supports coverage report in XML format
+    # https://github.com/frappe/frappe/issues/9696
+    #echo "Sending Unit Tests coverage of '${FRAPPE_APP_TO_TEST}' app to Codacy..."
+    #set +e
+    #wget -qO - https://coverage.codacy.com/get.sh | sh -s report -l Python -r "$(pwd)/sites/coverage.xml"
+    #set -e
 fi
 
 if [ -f "${FRAPPE_APP_UNIT_TEST_PROFILE}" ]; then

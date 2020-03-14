@@ -73,14 +73,17 @@ script:
 after_script:
   - echo "Changing to project directory ($home)"
   - cd "$home"
-  # Publish coverage to Codacy
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python -r /srv/erpnext/frappe/sites/.coverage
   # Publish coverage to Coveralls
   - sudo pip install coverage==4.5.4
   - sudo pip install python-coveralls
   - sudo mkdir -p '/home/frappe/frappe-bench/apps'
   - sudo ln -sf "$home" '/home/frappe/frappe-bench/apps/erpnext_template'
   - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
+  # Publish coverage to Codacy
+  - echo "Changing to sites directory (/srv/erpnext/frappe/sites/)"
+  - cd '/srv/erpnext/frappe/sites/'
+  - coverage xml
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python -r coverage.xml
 
 notifications:
   email: false

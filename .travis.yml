@@ -73,20 +73,20 @@ script:
 after_script:
   - echo "Changing to project directory ($home)"
   - cd "$home"
-  # Publish coverage to Coveralls
   - sudo pip install coverage==4.5.4
   - sudo pip install python-coveralls
+  # Publish coverage to Coveralls
   - sudo mkdir -p '/home/frappe/frappe-bench/apps'
   - sudo ln -sf "$home" '/home/frappe/frappe-bench/apps/erpnext_template'
   - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
   # Convert coverage to XML format
-  - echo "Changing to sites directory (/srv/erpnext/frappe/sites/)"
-  - cd '/srv/erpnext/frappe/sites/'
+  - echo "Copy and convert raw coverage data (/srv/erpnext/frappe/sites/.coverage) to XML"
+  - cp '/srv/erpnext/frappe/sites/.coverage' .coverage
   - coverage xml
   # Publish coverage to Codacy
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh)
+  - test -z "$CODACY_PROJECT_TOKEN" || bash <(curl -Ls https://coverage.codacy.com/get.sh)
   # Publish coverage to Codecov
-  - bash <(curl -s https://codecov.io/bash)
+  - test -z "$CODECOV_TOKEN" || bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email: false

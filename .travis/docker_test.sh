@@ -85,27 +85,29 @@ if [ -f "${FRAPPE_APP_UNIT_TEST_REPORT}" ]; then
     echo "Checking Frappe application '${FRAPPE_APP_TO_TEST}' unit tests report..."
 
     if grep -E '(errors|failures)="[1-9][0-9]*"' "${FRAPPE_APP_UNIT_TEST_REPORT}"; then
-        echo "Unit Tests of '${FRAPPE_APP_TO_TEST}' app failed! See report for details:"
-        cat "${FRAPPE_APP_UNIT_TEST_REPORT}"
+        echo "Unit Tests of '${FRAPPE_APP_TO_TEST}' app failed! See logs for details."
+        #cat "${FRAPPE_APP_UNIT_TEST_REPORT}"
         exit 1
     else
-        echo "Unit Tests of '${FRAPPE_APP_TO_TEST}' app successful! See report for details:"
-        cat "${FRAPPE_APP_UNIT_TEST_REPORT}"
+        echo "Unit Tests of '${FRAPPE_APP_TO_TEST}' app successful!"
+        #cat "${FRAPPE_APP_UNIT_TEST_REPORT}"
     fi
 fi
 
 if [ -f ./sites/.coverage ]; then
-    echo "Sending Unit Tests coverage of '${FRAPPE_APP_TO_TEST}' app to Coveralls..."
     set +e
-    coveralls -b "$(pwd)/apps/${FRAPPE_APP_TO_TEST}" -d "$(pwd)/sites/.coverage"
-    set -e
+    echo "Unit Tests coverage report of '${FRAPPE_APP_TO_TEST}' app:"
+    coverage report
+
+    #echo "Sending Unit Tests coverage of '${FRAPPE_APP_TO_TEST}' app to Coveralls..."
+    #coveralls -b "$(pwd)/apps/${FRAPPE_APP_TO_TEST}" -d "$(pwd)/sites/.coverage"
 
     # TODO When frappe supports coverage report in XML format
     # https://github.com/frappe/frappe/issues/9696
     #echo "Sending Unit Tests coverage of '${FRAPPE_APP_TO_TEST}' app to Codacy..."
-    #set +e
     #wget -qO - https://coverage.codacy.com/get.sh | sh -s report -l Python -r "$(pwd)/sites/coverage.xml"
-    #set -e
+
+    set -e
 fi
 
 if [ -f "${FRAPPE_APP_UNIT_TEST_PROFILE}" ]; then

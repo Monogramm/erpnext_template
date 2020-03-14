@@ -1,4 +1,4 @@
-# **erpnext_templatename__** Documentation site
+# **erpnext_template** Documentation site
 
 This directory contains the code for the **ERPNext Template** docs site, [monogramm.github.io/erpnext_template](https://monogramm.github.io/erpnext_template).
 

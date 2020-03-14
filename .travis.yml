@@ -79,7 +79,7 @@ after_script:
   - sudo pip install coverage==4.5.4
   - sudo pip install python-coveralls
   # Publish coverage to Codacy
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh)
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python -r /srv/erpnext/frappe/sites/.coverage
   # Publish coverage to Coveralls
   - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
 

@@ -79,11 +79,14 @@ after_script:
   - sudo mkdir -p '/home/frappe/frappe-bench/apps'
   - sudo ln -sf "$home" '/home/frappe/frappe-bench/apps/erpnext_template'
   - coveralls -b "$home" -d /srv/erpnext/frappe/sites/.coverage
-  # Publish coverage to Codacy
+  # Convert coverage to XML format
   - echo "Changing to sites directory (/srv/erpnext/frappe/sites/)"
   - cd '/srv/erpnext/frappe/sites/'
   - coverage xml
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python -r coverage.xml
+  # Publish coverage to Codacy
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh)
+  # Publish coverage to Codecov
+  - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email: false

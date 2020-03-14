@@ -1,6 +1,12 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2020, Monogramm and Contributors
+# See license.txt
 """
 Configuration for docs.
 """
+
+from __future__ import unicode_literals
+
 
 # source_link = "https://github.com/Monogramm/erpnext_template"
 # docs_base_url = "https://monogramm.github.io/erpnext_template"

@@ -79,12 +79,14 @@ after_script:
   - echo "Copy and convert raw coverage data (/srv/erpnext/frappe/sites/.coverage) to XML"
   - cp '/srv/erpnext/frappe/sites/.coverage' .coverage
   - coverage xml
+  - ls -al .
   # Publish coverage to Coveralls
   - sudo mkdir -p '/home/frappe/frappe-bench/apps'
   - sudo ln -sf "$home" '/home/frappe/frappe-bench/apps/erpnext_template'
   - coveralls -b "$home" -d "$home/.coverage"
   # Publish coverage to Codacy
-  - test -z "$CODACY_PROJECT_TOKEN" || bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python -r "$home/coverage.xml"
+  - ls -al "$home"
+  - test -z "$CODACY_PROJECT_TOKEN" || bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python -r "./coverage.xml"
   # Publish coverage to Codecov
   - test -z "$CODECOV_TOKEN" || bash <(curl -s https://codecov.io/bash)
 

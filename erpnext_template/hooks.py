@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
+# Copyright (c) 2020, Monogramm and Contributors
+# See license.txt
+"""
+Configuration for hooks.
+"""
+
 from __future__ import unicode_literals
+
 
 app_name = "erpnext_template"
 app_title = "ERPNext Template"

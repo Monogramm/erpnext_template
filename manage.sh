@@ -49,6 +49,16 @@ console() {
     dc -it "${1}" exec erpnext_app bench console ${@:2}
 }
 
+## TODO Add function to initialize from template
+#   - Replace all occurences of `erpnext_template` and `ERPNext Template` in all files
+#   - Rename all directories `erpnext_template`
+
+## TODO Add function to make release X.Y.Z
+#   - Update version in ./erpnext_template/__init__.py
+#   - Update version in ./.gitmoji-changelogrc
+#   - Generate Changelog for version `gitmoji-changelog --preset generic`
+#   - Add and commit to git modifications with message `:bookmark: Release X.Y.Z`
+
 usage() {
     echo "usage: ./manage.sh COMMAND [ARGUMENTS]
 

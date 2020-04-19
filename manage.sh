@@ -35,6 +35,11 @@ restart() {
 }
 
 logs() {
+    log 'Listing container(s)...'
+    dc "${1}" ps -f ${@:2}
+}
+
+logs() {
     log 'Following container(s) logs (Ctrl + C to stop)...'
     dc "${1}" logs -f ${@:2}
 }
@@ -67,6 +72,8 @@ usage() {
         start       Start Dev env
         restart     Retart Dev env
         stop        Stop Dev env
+        test        Start and follow Dev env test container
+        ps          List Dev env containers
         logs        Follow logs of Dev env
         down        Stop and remove Dev env
         console     Send command to Dev env bench console
@@ -84,6 +91,7 @@ case "${1}" in
     stop) stop docker-compose.yml ${@:2};;
     test) start docker-compose.yml sut
     logs docker-compose.yml sut;;
+    ps) ps docker-compose.yml ${@:2};;
     logs) logs docker-compose.yml ${@:2};;
     down) down docker-compose.yml ${@:2};;
     console) console docker-compose.yml ${@:2};;

@@ -34,7 +34,7 @@ restart() {
     dc "${1}" restart ${@:2}
 }
 
-logs() {
+ps() {
     log 'Listing container(s)...'
     dc "${1}" ps -f ${@:2}
 }

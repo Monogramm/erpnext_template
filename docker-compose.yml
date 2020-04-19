@@ -52,6 +52,7 @@ services:
     environment:
       # Docker setup
       - DOCKER_DB_ALLOWED_HOSTS=
+      - DOCKER_DB_TIMEOUT=240
       - DOCKER_APPS_TIMEOUT=900
       # Frappe setup
       - FRAPPE_APP_INIT=frappe erpnext ${FRAPPE_APP_TO_TEST}

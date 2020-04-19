@@ -47,7 +47,7 @@ logs() {
 down() {
     log 'Stopping and removing container(s) and data...'
     dc "${1}" down ${@:2}
-    rm -rf "${ERPNEXT_HOME:/srv/erpnext/frappe}"/*
+    rm -rf "${ERPNEXT_HOME:/srv/erpnext_template/frappe}"/*
 }
 
 console() {

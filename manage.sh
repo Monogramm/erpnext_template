@@ -36,7 +36,7 @@ restart() {
 
 ps() {
     log 'Listing container(s)...'
-    dc "${1}" ps -f ${@:2}
+    dc "${1}" ps ${@:2}
 }
 
 logs() {

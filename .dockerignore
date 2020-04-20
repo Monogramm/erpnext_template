@@ -193,3 +193,14 @@ typings/
 # Frappe
 public/
 services/
+
+# Travis-CI
+.travis.yml
+
+# Jenkins
+Jenkisfile
+
+# DockerHub
+docker-compose.yml
+docker-compose.test.yml
+hooks/

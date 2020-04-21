@@ -17,6 +17,8 @@ dc() {
 build() {
     log 'Building container(s)...'
     dc "${1}" build ${@:2}
+    # (dirty) trick to allow edition of files generated from docker group
+    chmod -R g+w .
 }
 
 start() {

@@ -1,6 +1,10 @@
-# **erpnext_template** Documentation
+# **ERPNext Template** Documentation
 
 This is the Documentation for **ERPNext Template**.
+
+## Source Code
+
+See source code on GitHub at [github.com/Monogramm/erpnext_template](https://github.com/Monogramm/erpnext_template/).
 
 ## Docs
 

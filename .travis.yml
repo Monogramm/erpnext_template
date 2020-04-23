@@ -15,11 +15,12 @@ before_install:
   - export TAG=travis
   - export VCS_REF=`git rev-parse --short HEAD`
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
-  - export IMAGE_NAME=erpnext_template
+  - export IMAGE_NAME=docker-erpnext-template
   - export home=$(pwd)
   - export travis_dir="${home}/.travis"
   - export BUILD_BRANCH=${TRAVIS_PULL_REQUEST_BRANCH:-${TRAVIS_BRANCH}}
   - export BUILD_URL=https://github.com/${TRAVIS_PULL_REQUEST_SLUG:-${TRAVIS_REPO_SLUG}}
+  - export BUILD_APP=erpnext_template
 
 install:
   - echo "Changing to travis test directory ($travis_dir)"

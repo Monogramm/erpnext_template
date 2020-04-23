@@ -53,6 +53,7 @@ services:
       args:
           - BUILD_BRANCH=${BUILD_BRANCH}
           - BUILD_URL=${BUILD_URL}
+          - BUILD_APP=${BUILD_APP}
     image: ${IMAGE_NAME}
     container_name: erpnext_app
     #restart: always

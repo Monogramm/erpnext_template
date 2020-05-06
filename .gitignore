@@ -193,3 +193,5 @@ typings/
 # Frappe
 public/
 services/
+
+erpnext_template/www/

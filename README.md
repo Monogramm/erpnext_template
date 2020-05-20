@@ -32,7 +32,14 @@ See GitHub Pages at [monogramm.github.io/erpnext_template](https://monogramm.git
 ## :chart_with_upwards_trend: Changes
 
 All notable changes to this project will be documented in [CHANGELOG](./CHANGELOG.md) file.
-This CHANGELOG is generated with :heart: by [gitmoji-changelog](https://github.com/frinyvonnick/gitmoji-changelog)
+This CHANGELOG is generated with :heart: by [gitmoji-changelog](https://github.com/frinyvonnick/gitmoji-changelog).
+<!--
+To generate new changelog:
+* update `.gitmoji-changelogrc`
+* execute `gitmoji-changelog --preset generic`
+
+-->
+
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## :bookmark: Roadmap

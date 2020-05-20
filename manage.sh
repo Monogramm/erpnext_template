@@ -60,11 +60,30 @@ console() {
 #   - Replace all occurences of `erpnext_template` and `ERPNext Template` in all files
 #   - Rename all directories `erpnext_template`
 
-## TODO Add function to make release X.Y.Z
-#   - Update version in ./erpnext_template/__init__.py
-#   - Update version in ./.gitmoji-changelogrc
-#   - Generate Changelog for version `gitmoji-changelog --preset generic`
-#   - Add and commit to git modifications with message `:bookmark: Release X.Y.Z`
+prepare_release() {
+    NEW_VERSION=${1}
+    if [ -z "${NEW_VERSION}" ] ; then
+        log 'Missing release version!'
+        return 1;
+    fi
+
+    log 'Updating Frappe app version...'
+    sed -i \
+        -e "s|__version__ = '.*'|__version__ = '${NEW_VERSION}'|g" \
+        ./erpnext_template/__init__.py
+
+    log 'Updating gitmoji-changelog version...'
+    sed -i \
+        -e "s|\"version\": \".*\"|\"version\": \"${NEW_VERSION}\"|g" \
+        ./.gitmoji-changelogrc
+
+    # Generate Changelog for version
+    log "Generating Changelog for version '${NEW_VERSION}'..."
+    npm install
+    npm run gitmoji-changelog
+
+    # TODO Add and commit to git with message `:bookmark: Release X.Y.Z`
+}
 
 usage() {
     echo "usage: ./manage.sh COMMAND [ARGUMENTS]

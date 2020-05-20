@@ -89,15 +89,16 @@ usage() {
     echo "usage: ./manage.sh COMMAND [ARGUMENTS]
 
     Commands:
-        build       Build Dev env
-        start       Start Dev env
-        restart     Retart Dev env
-        stop        Stop Dev env
-        test        Start and follow Dev env test container
-        ps          List Dev env containers
-        logs        Follow logs of Dev env
-        down        Stop and remove Dev env
-        console     Send command to Dev env bench console
+        build               Build Dev env
+        start               Start Dev env
+        restart             Retart Dev env
+        stop                Stop Dev env
+        test                Start and follow Dev env test container
+        ps                  List Dev env containers
+        logs                Follow logs of Dev env
+        down                Stop and remove Dev env
+        console             Send command to Dev env bench console
+        prepare-release     Prepare Frappe app release
     "
 }
 
@@ -116,6 +117,7 @@ case "${1}" in
     logs) logs docker-compose.yml ${@:2};;
     down) down docker-compose.yml ${@:2};;
     console) console docker-compose.yml ${@:2};;
+    prepare-release) prepare_release ${@:2};;
     # PROD env
     #build) TAG=${DOCKER_TAG} \
     #    VCS_REF=`git rev-parse --short HEAD` \

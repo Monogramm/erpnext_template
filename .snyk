@@ -8,3 +8,9 @@ patch:
         patched: '2020-05-01T07:58:34.039Z'
     - cypress > getos > async > lodash:
         patched: '2020-05-01T07:58:34.039Z'
+    - gitmoji-changelog > lodash:
+        patched: '2020-05-20T16:58:37.397Z'
+    - gitmoji-changelog > @gitmoji-changelog/markdown > lodash:
+        patched: '2020-05-20T16:58:37.397Z'
+    - gitmoji-changelog > inquirer > lodash:
+        patched: '2020-05-20T16:58:37.397Z'

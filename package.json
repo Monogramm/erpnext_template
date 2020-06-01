@@ -1,6 +1,6 @@
 {
   "name": "erpnext_template",
-  "description": "__app_description__",
+  "description": "TODO_APP_DESCRIPTION",
   "author": "Monogramm",
   "license": "AGPL",
   "dependencies": {

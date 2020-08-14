@@ -2,9 +2,7 @@
 
 This directory contains the code for the **ERPNext Template** docs site, [monogramm.github.io/erpnext_template](https://monogramm.github.io/erpnext_template).
 
-References:
-
--   [Publish Your Project Documentation with GitHub Pages](https://github.blog/2016-08-22-publish-your-project-documentation-with-github-pages/)
+For the user guide and technical documentation, check the Frappe [app documentation](https://github.com/Monogramm/erpnext_template/blob/master/erpnext_template/docs) or compile it locally using [recod_frappe_devtools](https://github.com/Monogramm/recod_frappe_devtools).
 
 ## Contributing
 

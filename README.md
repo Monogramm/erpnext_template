@@ -19,6 +19,8 @@ Template variables to replace in ALL files:
 * TODO_APP_DESCRIPTION: Uppercase value of the GitHub slug
 * TODO_APP_USAGE: Application description
 
+Make sure to also rename the erpnext_template directory!
+
 -->
 
 ## ERPNext Template
